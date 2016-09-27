@@ -8,7 +8,7 @@
   },
   "name": "oniros_cli",
   "version": "0.1.3",
-  "readme":"readme.md",
+  "readme": "readme.md",
   "description": "Cli command line tool for Oniros",
   "main": "bin/oniros.js",
   "repository": {
@@ -18,8 +18,7 @@
   "bugs": {
     "url": "https://github.com/AthelasPeru/oniros-cli/issues"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "maintainers": [
     {
       "name": "ondoheer",
@@ -35,5 +34,8 @@
   "dependencies": {
     "inquirer": "^1.1.3",
     "shelljs": "^0.7.4"
+  },
+  "devDependencies": {    
+    
   }
 }

@@ -7,7 +7,7 @@
     "oniros": "bin/oniros.js"
   },
   "name": "@ondoheer/oniros_cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cli command line tool for Oniros",
   "main": "index.js",
   "repository": {

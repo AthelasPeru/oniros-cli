@@ -1,5 +1,7 @@
 #! /usr/bin/env node
-console.log("Welcome to Oniros CLI");
+console.log("\n#####################");
+console.log("# Welcome to Oniros #");
+console.log("#####################\n");
 
 var shell = require("shelljs");
 var inquirer = require("inquirer");
@@ -31,7 +33,11 @@ var choices = [
 		value: "imagemin"
 	},
 	{
-		name: "7) Zip Theme",
+		name: "7) Build Login CSS",
+		value: "login:build:css"
+	},
+	{
+		name: "8) Zip Theme",
 		value: "zip"
 	}
 ];
@@ -44,8 +50,5 @@ var input = inquirer.prompt([
 	    choices: choices
   },
 ]).then(function (answers) {
-	// console.log(answers);
-
-	shell.exec("npm run " + answers.script);
-  //console.log(JSON.stringify(answers, null, '  '));
+	shell.exec("npm run " + answers.script);  
 });

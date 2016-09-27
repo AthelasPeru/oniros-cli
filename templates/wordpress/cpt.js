@@ -32,7 +32,11 @@ function athelas_register_{{cpt_name}}() {
 		"hierarchical" => false,
 		"rewrite" => array( "slug" => "{{slug}}", "with_front" => true ),
 		"query_var" => true,
-		"supports" => array({{supports}}),	
+		"supports" => array(
+				{{#supports}}
+					'{{.}}',
+				{{/supports}}
+		),	
 	);
 	register_post_type( "{{cpt_name}}", $args );
 

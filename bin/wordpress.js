@@ -4,36 +4,12 @@ var inquirer = require("inquirer");
 
 wp.choices = [
 	{
-		name:"1) Watch Main (Main theme SCSS and JS)",
+		name:"1) Create CTP",
 		value: "watch:main"
 	},
 	{
-		name:"2) Watch All (Main Theme and Login SCSS and JS)",
+		name:"2) Create imagesize",
 		value: "watch:all"
-	},
-	{
-		name:"3) Build Main (Main theme SCSS and JS)",
-		value: "build:main:all"
-	},
-	{
-		name: "4) Build All (Main Theme/Login SCSS/JS, Favicon, Imagemin)",
-		value: "build:all"
-	},
-	{
-		name: "5) Process Favicon (Connect to realfavicongenerator api and produce favicons)",
-		value: "favicon"
-	},
-	{
-		name: "6) Minimize Images",
-		value: "imagemin"
-	},
-	{
-		name: "7) Build Login CSS",
-		value: "login:build:css"
-	},
-	{
-		name: "8) Zip Theme",
-		value: "zip"
 	}
 ];
 

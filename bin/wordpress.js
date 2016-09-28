@@ -1,6 +1,6 @@
 var wp = module.exports;
 var shell = require("shelljs");
-var inquirer = require("inquirer");
+
 
 wp.choices = [
 	{
@@ -12,5 +12,3 @@ wp.choices = [
 		value: "watch:all"
 	}
 ];
-
-wp.display  = inquirer.prompt;

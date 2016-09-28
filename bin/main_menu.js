@@ -1,6 +1,6 @@
 var main_menu = module.exports;
 var shell = require("shelljs");
-var inquirer = require("inquirer");
+
 
 main_menu.choices = [
 	{
@@ -13,4 +13,3 @@ main_menu.choices = [
 	}	
 ];
 
-main_menu.display  = inquirer.prompt;

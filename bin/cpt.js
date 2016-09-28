@@ -1,7 +1,7 @@
 var cpt = module.exports;
 
 var shell = require("shelljs");
-var inquirer = require("inquirer");
+
 
 cpt.support = [
 	{
@@ -140,5 +140,5 @@ cpt.questions = [
   	},
 ];
 
-cpt.display  = inquirer.prompt;
+
 

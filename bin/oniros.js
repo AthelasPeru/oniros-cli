@@ -20,7 +20,7 @@ var main_menu = require("./main_menu.js");
 
 // Main Menu
 
-main_menu.display([
+inquirer.prompt([
 	{
 	    type: 'list',
 	    name: 'submenu',
@@ -30,7 +30,7 @@ main_menu.display([
 ]).then(function (answers) {
 	// Oniros NPM Scripts
 	if(answers.submenu == "build_tools"){
-		build.display([
+		inquirer.prompt([
 			{
 			    type: 'list',
 			    name: 'script',

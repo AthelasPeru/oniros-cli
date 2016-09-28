@@ -53,12 +53,29 @@ cpt.support = [
 cpt.options = [
 	{
 		name:"Public",
-		value: "public"
+		value: "public",
+		default: true
 	},
 	{
-		name:"Show in UI",
-		value: "show_ui"
-	}
+		name:"Exclude from search",
+		value: "exclude_from_search",
+		default: false
+	},
+	{
+		name:"Show in Admin Menu",
+		value: "show_in_menu",
+		default: true
+	},
+	{
+		name:"Show in Nav Menus (Avaliable to show on the menu builder)",
+		value: "show_in_nav_menus",
+		default: false
+	},
+	{
+		name:"Capability type: Post or Page",
+		value: "capability_type",
+		default: "post"
+	},
 ];
 
 cpt.questions = [
@@ -106,6 +123,13 @@ cpt.questions = [
 	    
 	   
 	    
+  	},
+  	{
+	    type: 'checkbox',
+	    name: 'supports',
+	    message: 'Suport capabilities? Use space to select',
+	    paginated: true,
+	    choices: cpt.support
   	},
   	{
 	    type: 'checkbox',

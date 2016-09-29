@@ -7,7 +7,7 @@
     "oniros": "bin/oniros.js"
   },
   "name": "oniros_cli",
-  "version": "0.1.3",
+  "version": "0.3.0",
   "description": "Cli command line tool for Oniros",
   "main": "bin/oniros.js",
   "repository": {
@@ -35,7 +35,5 @@
     "mustache": "^2.2.1",
     "shelljs": "^0.7.4"
   },
-  "devDependencies": {    
-    
-  }
+  "devDependencies": {}
 }

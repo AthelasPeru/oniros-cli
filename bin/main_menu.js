@@ -8,8 +8,17 @@ main_menu.choices = [
 		value: "build_tools"
 	},
 	{
-		name:"2) Wordpress funtionalities",
-		value: "wordpress"
+		name:"2) Create WP Custom Post Type",
+		value: "cpt"
 	}	
+];
+
+main_menu.questions = [
+	{
+	    type: 'list',
+	    name: 'submenu',
+	    message: 'What do you want Oniros to do for you?\n Remeber you should be in the main project folder',
+	    choices: main_menu.choices
+  	}
 ];
 

@@ -51,31 +51,7 @@ cpt.support = [
 ];
 
 cpt.options = [
-	{
-		name:"Public",
-		value: "public",
-		default: true
-	},
-	{
-		name:"Exclude from search",
-		value: "exclude_from_search",
-		default: false
-	},
-	{
-		name:"Show in Admin Menu",
-		value: "show_in_menu",
-		default: true
-	},
-	{
-		name:"Show in Nav Menus (Avaliable to show on the menu builder)",
-		value: "show_in_nav_menus",
-		default: false
-	},
-	{
-		name:"Capability type: Post or Page",
-		value: "capability_type",
-		default: "post"
-	},
+	
 ];
 
 cpt.questions = [
@@ -119,10 +95,7 @@ cpt.questions = [
 	    message: 'slug for your CPT',
 	    default: function(answers){
 	    	return answers.plural.toLowerCase()
-	    }
-	    
-	   
-	    
+	    }	    
   	},
   	{
 	    type: 'checkbox',
@@ -130,13 +103,61 @@ cpt.questions = [
 	    message: 'Suport capabilities? Use space to select',
 	    paginated: true,
 	    choices: cpt.support
+  	},  	
+  	{
+  		type: "confirm",
+  		message:"Public",
+  		name: "public",
+  		default: true
   	},
   	{
-	    type: 'checkbox',
-	    name: 'supports',
-	    message: 'Suport capabilities? Use space to select',
-	    paginated: true,
-	    choices: cpt.support
+  		type: "confirm",
+  		message:"Exclude from search",
+  		name: "exclude_from_search",
+  		default: false
+  	},
+  	{
+  		type: "confirm",
+  		message:"Show in Admin Menu",
+  		name: "show_in_menu",
+  		default: true
+  	},
+  	{
+  		type: "confirm",
+  		message:"Show in Nav Menus (Avaliable to show on the menu builder)",
+  		name: "show_in_nav_menus",
+  		default: false
+  	},
+  	{
+  		type: "list",
+  		message:"Capability type: Post or Page",
+  		name: "capability_type",
+  		choices: ["post", "page"],
+  		default: 0
+  	},
+  	{
+  		type: "confirm",
+  		message:"Map Meta Capabilities (Allow CPT to have meta capabilities)",
+  		name: "map_meta_cap",
+  		default: true
+  	},
+  	{
+  		type: "confirm",
+  		message:"Hierarchical",
+  		name: "hierarchical",
+  		default: false
+  	},
+  	{
+  		type: "confirm",
+  		message:"Has Archive",
+  		name: "has_archive",
+  		default: true
+  	},
+  	{
+  		type: "confirm",
+  		message:"Show in RESTApi",
+  		name: "show_in_rest",
+  		default: true
   	},
 ];
 

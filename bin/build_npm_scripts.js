@@ -38,5 +38,13 @@ build.choices = [
 	}
 ];
 
+build.questions = [
+			{
+			    type: 'list',
+			    name: 'script',
+			    message: 'Choose your build script',
+			    choices: build.choices
+		  	}
+		];
 build.display  = inquirer.prompt;
 

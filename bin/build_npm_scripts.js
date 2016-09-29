@@ -46,5 +46,5 @@ build.questions = [
 			    choices: build.choices
 		  	}
 		];
-build.display  = inquirer.prompt;
+
 

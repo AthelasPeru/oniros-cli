@@ -42,3 +42,12 @@ The Oniros CLI offers
 
 1. **Create a WP Custom Post Type** : Interactive interface to add CPT to your oniros theme.
 
+##Roadmap
+
+- Add WP Taxonomies
+- Add WP Menues
+- Add WP Single-Page
+- Add WP Archive-Page
+
+
+

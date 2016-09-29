@@ -8,8 +8,8 @@ main_menu.choices = [
 		value: "build_tools"
 	},
 	{
-		name:"2) Create WP Custom Post Type",
-		value: "cpt"
+		name:"2) Use WordPress Tools",
+		value: "wordpress"
 	}	
 ];
 

@@ -26,22 +26,35 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 		});
 	}
 	// Wordpress templating
-	else if(answers.submenu == "cpt"){
-		inquirer.prompt(
-			cpt.questions
-		).then(function(answers){
-			cpt.answers = answers;
-			var template;
-			fs.readFile(config.templates_path + config.cpt_template, 'UTF-8', function (err, data) {
-			  if (err) throw err;
-			  
-			  template = Mustache.render(data.toString(), cpt.answers);
-			  fs.appendFile(config.cpt_dist, template, function (err){
-					if (err) throw err;
-				});
-			});		
+	else if(answers.submenu == "wordpress"){
+		inquirer.prompt(wp.questions).then(function(answers){
+			if(answers.submenu =="create_cpt"){
+				inquirer.prompt(
+					cpt.questions
+				).then(function(answers){
+					cpt.answers = answers;
+					
+					if(cpt.answers.create_single){
+						var single_template;
+					}
+					
+					if(cpt.answers.has_archive){
+						var archive_template;
+					}
+					var cpt_template;
+					fs.readFile(config.templates_path + config.cpt_template, 'UTF-8', function (err, data) {
+					  if (err) throw err;
+					  
+					  cpt_template = Mustache.render(data.toString(), cpt.answers);
+					  fs.appendFile(config.cpt_dist, cpt_template, function (err){
+							if (err) throw err;
+						});
+					});		
 
+				});
+			}
 		});
+		
 	}
 	 
 });

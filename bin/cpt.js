@@ -2,7 +2,11 @@ var cpt = module.exports;
 
 var shell = require("shelljs");
 
+// Because JS doesn't have native capitalize....
 
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
 cpt.support = [
 	{
 		name:"Title",
@@ -58,7 +62,7 @@ cpt.questions = [
 	{
 	    type: 'input',
 	    name: 'cpt_name',
-	    message: 'Name for your Custom Post Type?',
+	    message: 'Name for your Custom Post Type (should be lowercase)?',
 	    validate: function(input){
 	    	if(["post", "page","attachment", "revision","nav_menu_item","action","author","order","theme"].indexOf(input.toLowerCase()) === -1 && input.indexOf(" ") === -1){
 	    		return true
@@ -75,7 +79,7 @@ cpt.questions = [
 	    message: 'Singular of your CPT',
 	    
 	    default: function(answers){
-	    	return answers.cpt_name
+	    	return answers.cpt_name.capitalize()
 	    }
 	    
   	},
@@ -84,7 +88,7 @@ cpt.questions = [
 	    name: 'plural',
 	    message: 'Plural for your CPT',
 	    default: function(answers){
-	    	return answers.cpt_name + "s"
+	    	return answers.cpt_name.capitalize() + "s"
 	    },
 	    
 	    

@@ -17,7 +17,9 @@
   "bugs": {
     "url": "https://github.com/AthelasPeru/oniros-cli/issues"
   },
-  "scripts": {},
+  "scripts": {
+    "test":"oniros"
+  },
   "maintainers": [
     {
       "name": "ondoheer",

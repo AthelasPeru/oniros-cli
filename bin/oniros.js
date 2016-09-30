@@ -55,12 +55,7 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			else if (answers.submenu == "create_taxonomy"){
 
 			}
-			else if(answers.submenu =="create_custom_single"){
-
-			} 
-			else if (answers.submenu == "create_custom_archive"){
-
-			}
+			
 		});
 		
 	}

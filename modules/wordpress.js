@@ -4,7 +4,7 @@ var shell = require("shelljs");
 
 wp.choices = [
 	{
-		name:"1) Create Custom Post Type",
+		name:"1) Create Custom Post Type (you can also choose to create it's single and archive pages",
 		value: "create_cpt"
 	},
 	{
@@ -14,15 +14,8 @@ wp.choices = [
 	{
 		name:"3) Create Custom Taxonomy",
 		value: "create_taxonomy"
-	},
-	{
-		name:"4) Create Custom Single",
-		value: "create_custom_single"
-	},
-	{
-		name:"5) Create Custom Archive",
-		value: "create_custom_archive"
 	}
+	
 ];
 
 wp.questions = [

@@ -116,6 +116,12 @@ cpt.questions = [
   	},
   	{
   		type: "confirm",
+  		message:"Create Single Page for this CPT?",
+  		name: "create_single",
+  		default: true
+  	},
+  	{
+  		type: "confirm",
   		message:"Exclude from search",
   		name: "exclude_from_search",
   		default: false
@@ -153,7 +159,7 @@ cpt.questions = [
   	},
   	{
   		type: "confirm",
-  		message:"Has Archive",
+  		message:"Has Archive (will also create an archive-[cpt-name].php file)",
   		name: "has_archive",
   		default: true
   	},

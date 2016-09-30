@@ -3,7 +3,7 @@ var config = module.exports;
 var path = require('path');
 
 // Templates folder
-config.templates_path = path.resolve(__dirname,"../templates/wordpress/");
+config.templates_path = path.resolve(__dirname,"templates/wordpress/");
 config.project_root = path.resolve(process.cwd(), "");
 
 // CPT

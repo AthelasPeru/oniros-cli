@@ -12,10 +12,10 @@ var inquirer = require("inquirer");
 var config = require("../config.js");
 var cpt = require("../modules/cpt.js");
 var build = require("../modules/build_npm_scripts.js");
-var wp = require("../modules/wordpress.js");
+var wp = require("../modules/wordpress_menu.js");
 var main_menu = require("../modules/main_menu.js");
 var page = require("../modules/page.js");
-
+var cache = require("../modules/cache.js");
 
 
 
@@ -24,6 +24,8 @@ var page = require("../modules/page.js");
 
 
 inquirer.prompt(main_menu.questions).then(function (answers) {
+	
+	cache.createCacheFileIfNotExists();
 	// Oniros NPM Scripts
 	if(answers.submenu == "build_tools"){
 		inquirer.prompt(build.questions).then(function (answers) {
@@ -38,10 +40,10 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 					cpt.questions
 				).then(function(answers){					
 					if(answers.create_single){
-							cpt.createSinglePage(answers);
+							cpt.createCPTSinglePage(answers);
 					}					
 					if(answers.has_archive){
-						cpt.createArchivePage(answers);
+						cpt.createCPTArchivePage(answers);
 					}
 					cpt.createCPT(answers);
 
@@ -50,6 +52,7 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			else if (answers.submenu == "create_page_template"){
 				inquirer.prompt(page.questions).then(function(answers){
 					page.createTemplatePage(answers);
+					cache.addPage(answers);
 				});
 			}
 			else if (answers.submenu == "create_taxonomy"){

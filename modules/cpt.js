@@ -1,6 +1,5 @@
 var cpt = module.exports;
 
-var shell = require("shelljs");
 var fs = require('fs');
 var path = require('path');
 var Mustache = require("mustache");
@@ -24,7 +23,8 @@ cpt.createCPT = function(answers){
 		});
 	});
 }
-cpt.createSinglePage = function(answers){
+
+cpt.createCPTSinglePage = function(answers){
 	var single_template;
 	fs.readFile(config.templates_path + config.single_template, 'UTF-8', function (err, data) {
 	  if (err) throw err;
@@ -36,7 +36,7 @@ cpt.createSinglePage = function(answers){
 	});	
 }
 
-cpt.createArchivePage = function(answers){
+cpt.createCPTArchivePage = function(answers){
 	var archive_template;
 	fs.readFile(config.templates_path + config.archive_template, 'UTF-8', function (err, data) {
 	  if (err) throw err;

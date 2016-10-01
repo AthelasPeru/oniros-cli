@@ -2,9 +2,19 @@ var config = module.exports;
 
 var path = require('path');
 
+// root
+config.project_root = path.resolve(process.cwd(), "");
+// cache file
+config.cache_file = config.project_root + "/oniros.json";
+config.cache_struct = {
+	"cpts": [],
+	"pages": [],
+	"taxonomies": []
+}
+
 // Templates folder
 config.templates_path = path.resolve(__dirname,"templates/wordpress/");
-config.project_root = path.resolve(process.cwd(), "");
+
 
 // CPT
 config.cpt_template = "/cpt.js";

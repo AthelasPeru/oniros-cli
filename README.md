@@ -40,14 +40,14 @@ The Oniros CLI offers
 
 ### Wordpress Utilities
 
-1. **Create a WP Custom Post Type** : Interactive interface to add CPT to your oniros theme.
+1. **Create a WP Custom Post Type** : Interactive interface to add CPT to your oniros theme. It will let you choose if you want a single-cpt.php and an archive-cpt.php template files generated
+2. **Create Page Template** : Creates a page template ;-)
 
 ##Roadmap
 
 - Add WP Taxonomies
 - Add WP Menues
-- Add WP Single-Page
-- Add WP Archive-Page
+
 
 
 

@@ -2,29 +2,36 @@ function athelas_themes_taxonomy() {
 
 	// taxonomy for Products
 	$labels = array(
-			        'name' => _x( 'Fitness Types', 'taxonomy general name' ),
-			        'singular_name' => _x( 'Fitness Type', 'taxonomy singular name' ),
-			        'search_items' => __( 'Search Fitness Types' ),
-			        'all_items' => __( 'All Fitness Types' ),
-			        'parent_item' => __( 'Parent Fitness Type' ),
-			        'parent_item_colon' => __( 'Parent Fitness Type:' ),
-			        'edit_item' => __( 'Edit Fitness Type' ),
-			        'update_item' => __( 'Update Fitness Type' ),
-			        'add_new_item' => __( 'Add New Fitness Type' ),
-			        'new_item_name' => __( 'New Fitness Type Name' ),
-			        'menu_name' => __( 'Fitness Type' ),
-			 );
+        'name' => _x( '{{singular}} Types', 'taxonomy general name' ),
+        'singular_name' => _x( '{{singular}} Type', 'taxonomy singular name' ),
+        'search_items' => __( 'Search {{plural}} Types' ),
+        'all_items' => __( 'All {{plural}} Types' ),
+        'parent_item' => __( 'Parent {{singular}} Type' ),
+        'parent_item_colon' => __( 'Parent {{singular}} Type:' ),
+        'edit_item' => __( 'Edit {{singular}} Type' ),
+        'update_item' => __( 'Update {{singular}} Type' ),
+        'add_new_item' => __( 'Add New {{singular}} Type' ),
+        'new_item_name' => __( 'New {{singular}} Type Name' ),
+        'menu_name' => __( '{{singular}} Type' ),
+ 	);
 	register_taxonomy(
-		'product_categories',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
-		'products',   		 //post type name
+		'{{tax_name}}',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
 		array(
-			'hierarchical' 		=> true,
+			{{#object_type}}
+					'{{.}}',
+			{{/object_type}}),   		 //post type name
+		array(
+			'hierarchical' 		=> {{hierarchical}},
+			'description'		=> {{description}},
+			'public'			=> {{public}},
+			'publicly_queryable'=> {{publicly_queryable}},
 			'labels' 			=> $labels,  //Display name
-			'query_var' 		=> true,
-			'show_ui' 			=> true,
-        	'show_admin_column' => true,
+			'query_var' 		=> {{query_var}},
+			'show_ui' 			=> {{show_ui}},
+        	'show_admin_column' => {{show_admin_column}},
+        	'show_in_nav_menus' => {{show_in_nav_menus}},
 			'rewrite'			=> array(
-					'slug' 			=> 'products', // This controls the base slug that will display before each term
+					'slug' 			=> '{{slug}}', // This controls the base slug that will display before each term
 					'with_front' 	=> false // Don't display the category base before
 					)
 			)

@@ -47,6 +47,7 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 						cpt.createCPTArchivePage(answers);
 					}
 					cpt.createCPT(answers);
+					cache.addCPT(answers);
 
 				});
 			}
@@ -63,10 +64,7 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			
 		});
 		
-	} 
-	else if(answers.submenu == "update_cache"){
-		cache.update();
-	}
+	} 	
 	 
 });
 

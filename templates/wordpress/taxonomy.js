@@ -1,4 +1,4 @@
-function athelas_themes_taxonomy() {
+function oniros_theme_taxonomy_{{singular}}() {
 
 	// taxonomy for Products
 	$labels = array(
@@ -37,4 +37,4 @@ function athelas_themes_taxonomy() {
 			)
 		);
 }
-add_action( 'init', 'athelas_themes_taxonomy');
+add_action( 'init', 'oniros_theme_taxonomy_{{singular}}');

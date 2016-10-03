@@ -11,7 +11,6 @@ cache.createCacheFileIfNotExists = function(){
 
 	fs.access(config.cache_file, fs.constants.F_OK ,  function(err){
 		if(err){
-			console.log("writting file");
 			fs.writeFile(config.cache_file , beautify(JSON.stringify(config.cache_struct), {indent_size:4}), function (err){
 				if (err) throw err;
 			});
@@ -76,8 +75,18 @@ cache.addPage = function(answers){
 	});
 }
 
-cache.addCPT = function(data){
+cache.addCPT = function(answers){
+	fs.readFile(config.cache_file, 'UTF-8', function(err, data){
+		var cache = JSON.parse(data);		
+		cache.cpts.push({
+			name:answers.cpt_name,
+			slug: answers.slug
+		});
+		fs.writeFile(config.cache_file , beautify(JSON.stringify(cache), {indent_size:4}), function (err){
+			if (err) throw err;
+		});
 
+	});
 }
 
 cache.getAllData = function(){

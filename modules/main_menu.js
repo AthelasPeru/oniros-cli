@@ -10,7 +10,12 @@ main_menu.choices = [
 	{
 		name:"2) Use WordPress Tools",
 		value: "wordpress"
-	}	
+	},
+	{
+		name:"3) Update Cache",
+		value: "update_cache"
+	},
+		
 ];
 
 main_menu.questions = [

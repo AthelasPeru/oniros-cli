@@ -8,6 +8,7 @@ var path = require('path');
 var Mustache = require("mustache");
 var shell = require("shelljs");
 var inquirer = require("inquirer");
+var ui = new inquirer.ui.BottomBar();
 
 var config = require("../config.js");
 var cpt = require("../modules/cpt.js");
@@ -58,9 +59,13 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			else if (answers.submenu == "create_taxonomy"){
 
 			}
+
 			
 		});
 		
+	} 
+	else if(answers.submenu == "update_cache"){
+		cache.update();
 	}
 	 
 });

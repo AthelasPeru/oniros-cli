@@ -45,6 +45,8 @@ The Oniros CLI offers
 
 ##Roadmap
 
+- Cache to JSON system
+- Update Cache Command
 - Add WP Taxonomies
 - Add WP Menues
 

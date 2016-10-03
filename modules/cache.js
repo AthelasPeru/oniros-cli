@@ -94,3 +94,11 @@ cache.getAllData = function(){
 		return JSON.parse(data);
 	});
 }
+
+cache.getCPTs = function(){
+	fs.readFile(config.cache_file, 'UTF-8', function(err, data){
+		console.log(data);
+		return data;
+		//return JSON.parse(data).cpts;
+	});
+}

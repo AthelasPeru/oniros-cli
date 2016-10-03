@@ -1,6 +1,6 @@
 function oniros_theme_taxonomy_{{singular}}() {
 
-	// taxonomy for Products
+	// taxonomy for {{object_type}}
 	$labels = array(
         'name' => _x( '{{singular}} Types', 'taxonomy general name' ),
         'singular_name' => _x( '{{singular}} Type', 'taxonomy singular name' ),
@@ -19,7 +19,8 @@ function oniros_theme_taxonomy_{{singular}}() {
 		array(
 			{{#object_type}}
 					'{{.}}',
-			{{/object_type}}),   		 //post type name
+			{{/object_type}}
+		),   		 //post type(s) name
 		array(
 			'hierarchical' 		=> {{hierarchical}},
 			'description'		=> {{description}},

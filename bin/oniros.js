@@ -12,6 +12,7 @@ var ui = new inquirer.ui.BottomBar();
 
 var config = require("../config.js");
 var cpt = require("../modules/cpt.js");
+var taxonomy = require("../modules/taxonomy.js");
 var build = require("../modules/build_npm_scripts.js");
 var wp = require("../modules/wordpress_menu.js");
 var main_menu = require("../modules/main_menu.js");
@@ -58,7 +59,11 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 				});
 			}
 			else if (answers.submenu == "create_taxonomy"){
-
+				console.log(cache.getCPTs());
+				console.log(taxonomy.createQuestions());
+				inquirer.prompt(taxonomy.createQuestions()).then(function(answers){
+					taxonomy.createTaxonomy(answers);
+				});
 			}
 
 			

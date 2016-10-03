@@ -12,12 +12,12 @@ String.prototype.capitalize = function() {
 }
 
 cpt.createCPT = function(answers){
-	cpt.answers = answers;
+	
 	var template;
 	fs.readFile(config.templates_path + config.cpt_template, 'UTF-8', function (err, data) {
 			if (err) throw err;
 
-		template = Mustache.render(data.toString(), cpt.answers);
+		template = Mustache.render(data.toString(), answers);
 		fs.appendFile(config.cpt_dist, template, function (err){
 			if (err) throw err;
 		});
@@ -143,7 +143,6 @@ cpt.questions = [
 	    type: 'checkbox',
 	    name: 'supports',
 	    message: 'Suport capabilities? Use space to select',
-	    paginated: true,
 	    choices: cpt.support
   	},  	
   	{

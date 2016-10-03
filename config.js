@@ -31,3 +31,4 @@ config.archive_template = "/archive-cpt.js";
 
 // Taxonomy
 config.tax_template = "/taxonomy.js";
+config.taxonomy_dist = path.resolve(process.cwd(),"includes/functions/taxonomies.php");

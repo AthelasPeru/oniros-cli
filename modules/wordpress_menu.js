@@ -11,10 +11,10 @@ wp.choices = [
 		name:"2) Create Page Template",
 		value: "create_page_template"
 	},
-	{
-		name:"3) Create Custom Taxonomy",
-		value: "create_taxonomy"
-	}
+	// {
+	// 	name:"3) Create Custom Taxonomy",
+	// 	value: "create_taxonomy"
+	// }
 	
 ];
 

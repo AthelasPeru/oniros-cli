@@ -18,8 +18,8 @@ page.createTemplatePage = function(answers){
 	fs.readFile(config.templates_path + config.page_template, 'UTF-8', function (err, data) {
 	  if (err) throw err;
 	  
-	  single_template = Mustache.render(data.toString(), answers);
-	  fs.writeFile(path.resolve(config.project_root,"page-" + answers.page_name.toLowerCase() + ".php") , single_template, function (err){
+	  page_template = Mustache.render(data.toString(), answers);
+	  fs.writeFile(path.resolve(config.project_root,"page-" + answers.page_name.toLowerCase() + ".php") , page_template, function (err){
 			if (err) throw err;
 		});
 	});	

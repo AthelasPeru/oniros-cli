@@ -17,6 +17,8 @@ var wp = require("../modules/wordpress_menu.js");
 var main_menu = require("../modules/main_menu.js");
 var page = require("../modules/page.js");
 var cache = require("../modules/cache.js");
+var category = require("../modules/cat-archive.js");
+var taxonomy_archive = require("../modules/tax-archive.js");
 
 
 
@@ -57,8 +59,17 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 					cache.addPage(answers);
 				});
 			}
-			else if (answers.submenu == "create_taxonomy"){
+			else if (answers.submenu == "create_cat_template"){
+				inquirer.prompt(category.questions).then(function(answers){
+					category.createCategoryPage(answers);
+					
+				});
+			}
 
+			else if (answers.submenu == "create_tax_template"){
+				inquirer.prompt(category.questions).then(function(answers){
+					taxonomy_archive.createTaxonomyPage(answers);					
+				});
 			}
 
 			

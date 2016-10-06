@@ -23,6 +23,12 @@ config.cpt_dist = path.resolve(process.cwd(),"includes/functions/posttypes.php")
 // Page Template
 config.page_template = "/page-custom.js";
 
+// Category Archive Template
+config.cat_template = "/category-cpt.js";
+
+// Taxonomy Archive Template
+config.tax_archive_template = "/taxonomy-cpt.js";
+
 // Single CPT
 config.single_template = "/single-cpt.js";
 

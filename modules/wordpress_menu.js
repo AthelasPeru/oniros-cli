@@ -11,6 +11,14 @@ wp.choices = [
 		name:"2) Create Page Template",
 		value: "create_page_template"
 	},
+	{
+		name: "3) Create Taxonomy Template",
+		value: "create_tax_template"
+	},
+	{
+		name: "4) Create Category Template",
+		value: "create_cat_template"
+	}
 	// {
 	// 	name:"3) Create Custom Taxonomy",
 	// 	value: "create_taxonomy"

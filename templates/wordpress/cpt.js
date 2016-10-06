@@ -26,7 +26,7 @@ function athelas_register_{{cpt_name}}() {
 		"show_ui" => true,
 		"has_archive" => {{has_archive}},
 		"show_in_menu" => {{show_in_menu}},
-		"show_in_nav_menus"=>{{show_in_nav_menus}}
+		"show_in_nav_menus"=>{{show_in_nav_menus}},
 		"exclude_from_search" => false,
 		"capability_type" => "{{capability_type}}",
 		"map_meta_cap" => {{map_meta_cap}},

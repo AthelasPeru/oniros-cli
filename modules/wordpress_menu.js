@@ -18,11 +18,11 @@ wp.choices = [
 	{
 		name: "4) Create Category Template",
 		value: "create_cat_template"
+	},
+	{
+		name:"3) Create Custom Taxonomy",
+		value: "create_taxonomy"
 	}
-	// {
-	// 	name:"3) Create Custom Taxonomy",
-	// 	value: "create_taxonomy"
-	// }
 	
 ];
 

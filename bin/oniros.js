@@ -19,6 +19,7 @@ var page = require("../modules/page.js");
 var cache = require("../modules/cache.js");
 var category = require("../modules/cat-archive.js");
 var taxonomy_archive = require("../modules/tax-archive.js");
+var taxonomy = require("../modules/taxonomy.js");
 
 
 
@@ -67,9 +68,15 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			}
 
 			else if (answers.submenu == "create_tax_template"){
-				inquirer.prompt(category.questions).then(function(answers){
+				inquirer.prompt(taxomony.questions).then(function(answers){
 					taxonomy_archive.createTaxonomyPage(answers);					
 				});
+			}
+			else if (answers.submenu == "create_taxonomy"){
+				inquirer.prompt(taxonomy.createQuestions()).then(function(answers){
+					taxonomy.createTaxonomy(answers);					
+				});
+				
 			}
 
 			

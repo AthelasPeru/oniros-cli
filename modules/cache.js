@@ -90,7 +90,10 @@ cache.addCPT = function(answers){
 }
 
 cache.getAllData = function(){
+	var toReturnData;
 	fs.readFile(config.cache_file, 'UTF-8', function(err, data){
-		return JSON.parse(data);
+		toReturnData =  JSON.parse(data);
 	});
+
+	return toReturnData;
 }

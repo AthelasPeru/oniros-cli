@@ -1,8 +1,7 @@
 #! /usr/bin/env node
-console.log("\n#####################");
-console.log("# Welcome to Oniros #");
-console.log("#####################\n");
 
+
+var colors = require('colors');
 var fs = require('fs');
 var path = require('path');
 var Mustache = require("mustache");
@@ -21,6 +20,10 @@ var category = require("../modules/cat-archive.js");
 var taxonomy_archive = require("../modules/tax-archive.js");
 var taxonomy = require("../modules/taxonomy.js");
 
+console.log("\n#####################".yellow);
+console.log("# Welcome to Oniros #".yellow);
+console.log("#####################\n".yellow);
+console.log("Remember you can exit at any time using ctrl+C\n".red);
 
 
 
@@ -44,7 +47,7 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 					cpt.questions
 				).then(function(answers){					
 					if(answers.create_single){
-							cpt.createCPTSinglePage(answers);
+						cpt.createCPTSinglePage(answers);
 					}					
 					if(answers.has_archive){
 						cpt.createCPTArchivePage(answers);
@@ -62,8 +65,7 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			}
 			else if (answers.submenu == "create_cat_template"){
 				inquirer.prompt(category.questions).then(function(answers){
-					category.createCategoryPage(answers);
-					
+					category.createCategoryPage(answers);					
 				});
 			}
 
@@ -74,9 +76,9 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			}
 			else if (answers.submenu == "create_taxonomy"){
 				inquirer.prompt(taxonomy.createQuestions()).then(function(answers){
-					taxonomy.createTaxonomy(answers);					
-				});
-				
+					taxonomy.createTaxonomy(answers);	
+					cache.addTaxonomy(answers);			
+				});				
 			}
 
 			

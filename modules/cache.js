@@ -55,8 +55,19 @@ cache.createCacheFileIfNotExists = function(){
 // 	});
 // }
 
-cache.addTaxonomy = function(data){
+cache.addTaxonomy = function(answers){
+	fs.readFile(config.cache_file, 'UTF-8', function(err, data){
+		var cache = JSON.parse(data);		
+		cache.taxonomies.push({
+			name:answers.tax_name,
+			slug: answers.slug,
+			post_types: answers.object_type
+		});
+		fs.writeFile(config.cache_file , beautify(JSON.stringify(cache), {indent_size:4}), function (err){
+			if (err) throw err;
+		});
 
+	});
 }
 
 cache.addPage = function(answers){

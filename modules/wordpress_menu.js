@@ -20,7 +20,7 @@ wp.choices = [
 		value: "create_cat_template"
 	},
 	{
-		name:"3) Create Custom Taxonomy",
+		name:"5) Create Custom Taxonomy",
 		value: "create_taxonomy"
 	}
 	

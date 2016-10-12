@@ -5,6 +5,8 @@ Oniros WP Theme builder CLI npm package
 
 You can use oniros_cli globally or as an npm script.
 
+Tested on npm version 3.10.8 and node v6.7.0
+
 ### Globally
 
 This allows you to only type ```oniros``` anywhere on your system and it will run. It's really not that useful, but some people are just lazy **cough** mreynoso **cough** enough to want to shorten the command by two words.

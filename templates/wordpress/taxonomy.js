@@ -1,3 +1,4 @@
+
 function oniros_theme_taxonomy_{{singular}}() {
 
 	// taxonomy for Products

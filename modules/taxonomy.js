@@ -95,7 +95,7 @@ taxonomy.createQuestions = function(){
 	  		    name: 'slug',
 	  		    message: 'slug for your Taxonomy',
 	  		    default: function(answers){
-	  		    	return answers.plural.toLowerCase()
+	  		    	return answers.plural.toLowerCase().replace(/ /g, "_") // Replaces space with underscores
 	  		    }	    
 	  	  	},
 	  	  	{

@@ -1,5 +1,5 @@
 
-function oniros_theme_taxonomy_{{singular}}() {
+function oniros_theme_taxonomy_{{tax_name}}() {
 
 	// taxonomy for Products
 	$labels = array(
@@ -36,4 +36,4 @@ function oniros_theme_taxonomy_{{singular}}() {
 			)
 		);
 }
-add_action( 'init', 'oniros_theme_taxonomy_{{singular}}');
+add_action( 'init', 'oniros_theme_taxonomy_{{tax_name}}');

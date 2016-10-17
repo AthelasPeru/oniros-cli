@@ -61,7 +61,7 @@ taxonomy.createQuestions = function(){
 			{
 			    type: 'input',
 			    name: 'tax_name',
-			    message: 'Name for your Taxonomy (should be lowercase)?',
+			    message: 'Name for your Taxonomy (should be lowercase and not include spaces or symbols)?',
 			    validate: function(input){
 			    	if(input.length < 32 && input.indexOf(" ") === -1){
 			    		return true

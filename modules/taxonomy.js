@@ -52,7 +52,7 @@ taxonomy.createQuestions = function(){
 		taxonomy.object_type.push(
 			{
 				name: cpts[i].name,
-				value: cpts[i].name
+				value: cpts[i].slug
 			}
 		);
 	}

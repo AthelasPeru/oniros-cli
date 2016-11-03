@@ -22,7 +22,11 @@ wp.choices = [
 	{
 		name:"5) Create Custom Taxonomy",
 		value: "create_taxonomy"
-	}
+	},
+	{
+		name:"6) Add WooCommerce Templates",
+		value: "woocommerce_template"
+	},
 	
 ];
 

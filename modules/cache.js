@@ -18,8 +18,15 @@ cache.createCacheFileIfNotExists = function(){
 	});		 
 }
 
-cache.update = function(){
-	var cache_data = JSON.parse(fs.readFileSync(config.cache_file, 'UTF-8'));
+cache.updatePages = function(){
+
+	try{
+
+		var cache_data = JSON.parse(fs.readFileSync(config.cache_file, 'UTF-8'));
+	}
+	catch(e){
+		console.log("oniros.json file not found. generating one");
+	}
 	
 
 	for(var i = 0; i < cache_data.pages.length; i++){
@@ -45,46 +52,40 @@ cache.update = function(){
 	}
 }
 
-cache.update_old = function(){
-	fs.readFile(config.cache_file, 'UTF-8', function(err, data){
-		
-		var cache = JSON.parse(data);
-		var keep = true;
-		var updated_pages = cache.pages;
-		
-		while(keep){
-			// update pages
-			for(var i = 0; i < cache.pages.length; i++){
+cache.updatePostTypes = function(){
+	try{
 
-				var file = config.project_root + "/" + cache.pages[i].template;				
-				console.log(file);
-				
-				fs.access(file, fs.constants.F_OK, function(err){
-					if(err){
-						// deleting with -1
-						console.log(updated_pages);
-						// var deleted = cache.pages.splice(i -1 , 1);
-						updated_pages.splice(i -1 , 1);	
-						console.log("updating non existant file");
-						console.log(updated_pages);
+		var cache_data = JSON.parse(fs.readFileSync(config.cache_file, 'UTF-8'));
+	}
+	catch(e){
+		console.log("oniros.json file not found. generating one");
+	}
+	// parse file CPTs
 
-						// breakLoop = true;
-					}
-				});
-				// if(breakLoop){ break;}
-			}
-			keep = false;
-		}		
-		// TODO somehow it doesn't update
-		console.log("finished");
-		console.log(updated_pages);
-		cache.pages = updated_pages;
-		console.log(beautify(cache, {indent_size:4}));
-		fs.writeFile(config.cache_file , beautify(cache, {indent_size:4}), function (err){
-			if (err) throw err;
-		});
+	// compare to content of the includes/functions/posttypes.php file
 
-	});
+	// if not in file, delete from cache
+};
+
+cache.updateTaxonomies = function(){
+	try{
+
+		var cache_data = JSON.parse(fs.readFileSync(config.cache_file, 'UTF-8'));
+	}
+	catch(e){
+		console.log("oniros.json file not found. generating one");
+	}
+	// parse file CPTs
+
+	// compare to content of the includes/functions/posttypes.php file
+
+	// if not in file, delete from cache
+};
+
+cache.update = function(){
+	cache.updatePages();
+	// cache.updatePostTypes();
+	// cache.updateTaxonomies();
 }
 
 cache.addTaxonomy = function(answers){

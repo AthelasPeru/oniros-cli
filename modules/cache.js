@@ -18,42 +18,74 @@ cache.createCacheFileIfNotExists = function(){
 	});		 
 }
 
+cache.update = function(){
+	var cache_data = JSON.parse(fs.readFileSync(config.cache_file, 'UTF-8'));
+	
 
-// cache.update = function(){
-// 	fs.readFile(config.cache_file, 'UTF-8', function(err, data){
-		
-// 		var cache = JSON.parse(data);
-// 		var keep = true;
-// 		var new_cache = "";
-		
-// 		while(keep){
-// 			// update pages
-// 			for(var i = 0; i < cache.pages.length; i++){
+	for(var i = 0; i < cache_data.pages.length; i++){
 
-// 				var file = config.project_root + "/" + cache.pages[i].template;				
-// 				var breakLoop = false;
+		var file = config.project_root + "/" + cache_data.pages[i].template;				
+		console.log(file);
+		
+		try{
+			fs.accessSync(file, fs.constants.F_OK);
+			console.log("exists");
+			console.log(file);
+		}
+		catch(e){
+			// if file doesn't exists, remove it from the
+			// object and update file				
+			
+			cache_data.pages.splice(i , 1);	
+			console.log("catched");
+			console.log(cache_data);				
+			fs.writeFileSync(config.cache_file , beautify(JSON.stringify(cache_data), {indent_size:4}));
+		}	
+		
+	}
+}
+
+cache.update_old = function(){
+	fs.readFile(config.cache_file, 'UTF-8', function(err, data){
+		
+		var cache = JSON.parse(data);
+		var keep = true;
+		var updated_pages = cache.pages;
+		
+		while(keep){
+			// update pages
+			for(var i = 0; i < cache.pages.length; i++){
+
+				var file = config.project_root + "/" + cache.pages[i].template;				
+				console.log(file);
 				
-// 				fs.access(file, fs.constants.F_OK, function(err){
-// 					if(err){
-// 						// deleting with -1
-// 						var deleted = cache.pages.splice(i -1 , 1);	
-// 						new_cache = JSON.stringify(cache);
-// 						console.log(new_cache);	
-// 						breakLoop = true;
-// 					}
-// 				});
-// 				if(breakLoop){ break;}
-// 			}
-// 			keep = false;
-// 		}		
-// 		// TODO somehow it doesn't update
-// 		console.log(beautify(new_cache, {indent_size:4}));
-// 		fs.writeFile(config.cache_file , beautify(new_cache, {indent_size:4}), function (err){
-// 			if (err) throw err;
-// 		});
+				fs.access(file, fs.constants.F_OK, function(err){
+					if(err){
+						// deleting with -1
+						console.log(updated_pages);
+						// var deleted = cache.pages.splice(i -1 , 1);
+						updated_pages.splice(i -1 , 1);	
+						console.log("updating non existant file");
+						console.log(updated_pages);
 
-// 	});
-// }
+						// breakLoop = true;
+					}
+				});
+				// if(breakLoop){ break;}
+			}
+			keep = false;
+		}		
+		// TODO somehow it doesn't update
+		console.log("finished");
+		console.log(updated_pages);
+		cache.pages = updated_pages;
+		console.log(beautify(cache, {indent_size:4}));
+		fs.writeFile(config.cache_file , beautify(cache, {indent_size:4}), function (err){
+			if (err) throw err;
+		});
+
+	});
+}
 
 cache.addTaxonomy = function(answers){
 	fs.readFile(config.cache_file, 'UTF-8', function(err, data){

@@ -84,6 +84,9 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			
 		});
 		
+	}
+	else if(answers.submenu == "cache"){
+		cache.update();
 	} 	
 	 
 });

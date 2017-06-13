@@ -70,7 +70,7 @@ inquirer.prompt(main_menu.questions).then(function (answers) {
 			}
 
 			else if (answers.submenu == "create_tax_template"){
-				inquirer.prompt(taxomony.questions).then(function(answers){
+				inquirer.prompt(taxonomy.questions).then(function(answers){
 					taxonomy_archive.createTaxonomyPage(answers);					
 				});
 			}

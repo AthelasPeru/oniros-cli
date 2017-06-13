@@ -7,7 +7,7 @@
     "oniros": "bin/oniros.js"
   },
   "name": "oniros_cli",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "description": "Cli command line tool for Oniros",
   "main": "bin/oniros.js",
   "repository": {
@@ -34,10 +34,10 @@
   "license": "Apache-2.0",
   "dependencies": {
     "colors": "^1.1.2",
-    "inquirer": "^1.1.3",
-    "js-beautify": "^1.6.4",
-    "mustache": "^2.2.1",
-    "shelljs": "^0.7.4"
+    "inquirer": "^1.2.3",
+    "js-beautify": "^1.6.14",
+    "mustache": "^2.3.0",
+    "shelljs": "^0.7.8"
   },
   "devDependencies": {}
 }
